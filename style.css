@@ -10,6 +10,10 @@ a {
     text-decoration: none;
 }
 
+.logo{
+    max-height: 3vh;
+}
+
 .container-fluid.caption {
     animation: fade-in 2s;
     /* Aggiunto un valore di durata (1s) per l'animazione */
