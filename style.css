@@ -70,9 +70,10 @@ nav.navbar {
     background-color: #141414;
 }
 
-.navbar-brand{
+.navbar-brand {
     max-height: 2rem;
 }
+
 .nav-link {
     font-family: "Red Hat Display", sans-serif;
     color: #FFFFFF;
