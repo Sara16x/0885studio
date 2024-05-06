@@ -70,6 +70,7 @@ nav.navbar {
     background-color: #141414;
 }
 
+
 .nav-link {
     font-family: "Red Hat Display", sans-serif;
     color: #FFFFFF;
@@ -217,6 +218,12 @@ p,
 }
 
 
+
+.text.mail {
+    text-align: end;
+}
+
+
 /* Davis Cup */
 .img.daviscup1 {
     text-align: center;
@@ -289,12 +296,6 @@ p,
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
-
-
-    .text.mail {
-        text-align: end;
-    }
 
     /* Impostazioni Font */
     h1,
