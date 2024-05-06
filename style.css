@@ -10,11 +10,6 @@ a {
     text-decoration: none;
 }
 
-.logo{
-    max-height: 3vh;
-    width: auto;
-}
-
 .container-fluid.caption {
     animation: fade-in 2s;
     /* Aggiunto un valore di durata (1s) per l'animazione */
@@ -76,12 +71,7 @@ nav.navbar {
 }
 
 .navbar-brand {
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    height: 1.5rem;
-    line-height: 0.5;
-    color: #6271FF;
+    max-height: 4.5vh;
 }
 
 .nav-link {
@@ -259,16 +249,6 @@ p,
     .desktop-only {
         display: inline;
     }
-
-    .navbar-brand:hover {
-        transform: rotate(360deg);
-        transition: transform 0.5s ease-in;
-        /* Aggiunto ritardo alla transizione */
-        transform-origin: center;
-        /* Specifica il punto di trasformazione al centro */
-        color: #FFFFFF;
-    }
-
 
     /* Impostazioni Font */
     p,
