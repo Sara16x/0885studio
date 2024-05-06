@@ -1,0 +1,351 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #141414;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-fluid.caption {
+    animation: fade-in 2s;
+    /* Aggiunto un valore di durata (1s) per l'animazione */
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(-1080px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.carousel-inner {
+    padding: 1rem;
+}
+
+.img-wrapper {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.img {
+    max-height: 90vh;
+}
+
+.row.video {
+    height: 90vh;
+}
+
+
+.img.daviscup1,
+.img.daviscup2 {
+    text-align: center;
+}
+
+.card {
+    margin: 0 .5rem;
+    background-color: #141414;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: 1px solid #6271FF;
+    border-radius: 0%;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #6271FF;
+    width: 6vh;
+    height: 6vh;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav.navbar {
+    border-bottom: 1px solid #6271FF;
+    background-color: #141414;
+}
+
+.navbar-brand {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    height: 1.5rem;
+    line-height: 0.5;
+    color: #6271FF;
+}
+
+.nav-link {
+    font-family: "Red Hat Display", sans-serif;
+    color: #FFFFFF;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+footer {
+    border-top: 1px solid #6271FF;
+}
+
+/* Home */
+.container-fluid.home {
+    height: 97vh;
+    border-bottom: 1px solid #6271FF;
+}
+
+/* Caption Home */
+.container.caption {
+    height: 90vh;
+}
+
+.container-fluid.graphic {
+    height: 90vh;
+    position: absolute;
+    z-index: 2;
+    border-left: 1px solid #6271FF;
+}
+
+/* Impostazioni stroke */
+.border-container {
+    border: 1px solid #6271FF;
+    /* Aggiunge un bordo bianco di 1px */
+    padding: 12px;
+    /* Aggiunge un padding interno di 10px */
+    box-sizing: border-box;
+    /* Assicura che il bordo e il padding siano inclusi nelle dimensioni dell'elemento */
+}
+
+/* Selected Works */
+.container-fluid.title {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+
+.row.title {
+    border-top: 1px solid #6271FF;
+    border-bottom: 1px solid #6271FF;
+}
+
+
+.desktop-only {
+    display: none;
+}
+
+/* Impostazioni Font */
+
+h1,
+.h1 {
+    font-size: 1.2rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0
+}
+
+
+h2 {
+    font-size: 1rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.h3 {
+    font-size: 1.3rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+
+}
+
+p,
+.p {
+    font-size: 1.1rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+
+.copyright:hover {
+    font-size: 0.7rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+    color: #a3a3a3;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+    color: #141414;
+}
+
+
+.p.grey {
+
+    color: #a3a3a3;
+    border-bottom: 1px solid #6271FF;
+
+}
+
+
+.text-footer {
+    font-size: 1rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.h5 {
+    font-size: 1rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.h5.card-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* Davis Cup */
+.img.daviscup1 {
+    text-align: center;
+}
+
+.img.daviscup2 {
+    text-align: center;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    /*Carousel*/
+
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 40%;
+        display: block;
+    }
+
+    .desktop-only {
+        display: inline;
+    }
+
+    .navbar-brand:hover {
+        transform: rotate(360deg);
+        transition: transform 0.5s ease-in;
+        /* Aggiunto ritardo alla transizione */
+        transform-origin: center;
+        /* Specifica il punto di trasformazione al centro */
+        color: #FFFFFF;
+    }
+
+
+    /* Impostazioni Font */
+    p,
+    .p {
+        font-size: 1rem;
+        font-family: "Red Hat Display", sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+    }
+
+    h1,
+    .h1 {
+        font-size: 1.7rem;
+    }
+
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .h5.card-title {
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0;
+    }
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.33%;
+        display: block;
+    }
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+
+    .text.mail {
+        text-align: end;
+    }
+
+    /* Impostazioni Font */
+    h1,
+    .h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .nav-link:hover {
+        color: #6271FF;
+    }
+
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    /* Impostazioni Font */
+
+    h1,
+    .h1 {
+        font-size: 2.5rem;
+    }
+
+    p,
+    .p {
+        font-size: 1.4rem;
+    }
+}
