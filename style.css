@@ -12,6 +12,7 @@ a {
 
 .logo{
     max-height: 3vh;
+    width: auto;
 }
 
 .container-fluid.caption {
