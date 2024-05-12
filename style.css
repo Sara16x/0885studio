@@ -187,6 +187,12 @@ p,
     color: #141414;
 }
 
+.imgright {
+    font-size: 1rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 400;
+    color:  #a3a3a3;
+}
 
 .p.grey {
 
