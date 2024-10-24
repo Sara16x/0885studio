@@ -10,25 +10,16 @@ a {
     text-decoration: none;
 }
 
-.container-fluid.caption {
-    animation: fade-in 2s ease; /* Aggiunta easing per animazione più fluida */
-}
-
-@keyframes fade-in {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
 .img {
     max-height: 95vh;
 }
 
 .img.home {
     height: 75vh;
+}
+
+.img.start {
+    height: 90vh;
 }
 
 .row.video {
@@ -44,13 +35,6 @@ a {
     height: 95vh; /* Assicura che l'immagine riempia il contenitore */
     width: 100vw; /* Assicura che l'immagine riempia il contenitore */
     object-fit: cover; /* Mantieni le proporzioni dell'immagine */
-}
-
-
-/* Home */
-.container-fluid.home {
-    height: 97vh;
-    border-bottom: 1px solid #5B00DB;
 }
 
 /* Stile di base per le immagini e i video */
@@ -126,12 +110,6 @@ footer {
     margin: 0;
     padding: 0;
     position: relative;
-}
-
-
-/* Caption Home */
-.container.caption {
-    height: 90vh;
 }
 
 .container-fluid.graphic {
