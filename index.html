@@ -9,7 +9,7 @@
     <meta name="keywords"
         content="Design, design studio, Visual design studio, graphic design, visual design, motion design,animation,brand Identity, Italy, 0885studio, Sara Cannone">
     <meta name="author" content="0885studio, Sara Cannone">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://0885studio.com">
     <meta property="og:title" content="0885 Studio">
@@ -30,26 +30,29 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo.svg" width="65" height="40" alt="0885studio logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Centrato orizzontalmente -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Centrato orizzontalmente -->
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Spostato a sinistra -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Spostato a sinistra -->
                     <li class="nav-item">
                         <a class="nav-link" href="mailto:hello@0885studio.com">Get in touch</a>
                     </li>
@@ -79,130 +82,154 @@
     </div>
 
 
-    <!-- Carousel -->
-    <div id="carouselExampleControls" class="carousel pt-5">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card">
-                    <a href="fino.html">
-                        <div class="img-wrapper"><img src="img/01fino.jpg" class="d-block w-100"
-                                alt="brand identity, Olio Extra Vergine d'Oliva Fino, Design"> </div>
-                        <div class="card-body">
-                            <h5 class="h5 card-title">Fino</h5>
-                            <p class="card-text">Brand Identity </p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="card">
-                    <a href="manne.html">
-                        <div class="img-wrapper"><img src="img/03manne.gif" class="d-block w-100"
-                                alt="UPuglia, Visual design, brand identity, flyer, design studio"> </div>
-                        <div class="card-body">
-                            <h5 class="h5 card-title">Mannè</h5>
-                            <p class="card-text">Visual design</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <a href="insightintogrids.html">
-                    <div class="card">
-                        <div class="img-wrapper"><img src="img/04insight.gif" class="d-block w-100"
-                                alt="Motion design, Animation, LRNZ"> </div>
-                        <div class="card-body">
-                            <h5 class="h5 card-title">Insight into grids</h5>
-                            <p class="card-text">Motion design</p>
-
-                        </div>
-                    </div>
+    <!-- Projects -->
+    <div class="container-fluid pt-2">
+        <div class="row g-1">
+            <div class="img home col-xl-7 col-lg-7 col-md-7 col-sm-12 position-relative">
+                <a href="statiframmentari.html" target="_blank">
+                    <img src="img/01_statiframmentari.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Statiframmentari - 0885studio">
                 </a>
+                <div class="overlay-text">Stati Frammentari</div>
             </div>
 
-            <div class="carousel-item">
-                <a href="daviscup.html">
-                    <div class="card">
-                        <div class="img-wrapper"><img src="img/05davis.gif" class="d-block w-100"
-                                alt="davis cup, visual design, poster design"> </div>
-                        <div class="card-body">
-                            <h5 class="h5 card-title">Davis Cup</h5>
-                            <p class="card-text">Visual design</p>
-                        </div>
-                    </div>
+            <div class="img home col-xl-5 col-lg-5 col-md-5 col-sm-12 position-relative">
+                <a href="damasu.html" target="_blank">
+                    <img src="img/02_damasu.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Damasu - 0885studio">
                 </a>
+                <div class="overlay-text">Damasu</div>
             </div>
-
-            <div class="carousel-item">
-                <a href="ildivo.html">
-                    <div class="card">
-                        <div class="img-wrapper"><img src="img/06divo.gif" class="d-block w-100"
-                                alt=" video editing, Sorrentino, il Divo"> </div>
-                        <div class="card-body">
-                            <h5 class="h5 card-title">Il Divo</h5>
-                            <p class="card-text">Video editing</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-
-    <!-- Cta -->
-    <div class="container col-xl-9 col-lg-9 col-md-9 col-sm-12 pt-5">
-        <div class="row text-center py-1">
-            <a href="mailto:hello@0885studio.com" class="">
-                <h2>I love how design connects
-                    me with other beings. <br class="desktop-only">
-                    Let's create something
-                    great together. </h2>
-            </a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer mt-5">
-        <div class="container py-3">
-            <div class="row">
-                <div class="text col-xl-3 col-lg-3 col-md-3 col-sm-12 py-1">
-                    <a href="works.html" class="text-footer">Home</a>
-                </div>
-
-                <div class="text col-xl-3 col-lg-3 col-md-3 col-sm-12 py-1">
-                    <a href="about.html" class="text-footer">About</a>
-                </div>
-
-                <div class="text col-xl-3 col-lg-3 col-md-3 col-sm-12 py-1">
-                    <a href="http://www.linkedin.com/in/sara-cannone/" class="text-footer" target="_blank">LinkedIn</a>
-                </div>
-
-                <div class="text-end col-xl-3 col-lg-3 col-md-3 col-sm-12 py-1">
-                    <a href="mailto:hello@0885studio.com" class="text-footer">Send me an email </a>
-                </div>
+    <div class="container-fluid pt-1">
+        <div class="row g-1">
+            <div class="img home col-xl-5 col-lg-5 col-md-5 col-sm-12 position-relative">
+                <a href="sessioneserale.html" target="_blank">
+                    <video class="img-fluid w-100 h-100 object-fit-cover" autoplay loop muted playsinline>
+                        <source src="img/03_sessioneserale.mp4" type="video/mp4">
+                        Il tuo browser non supporta i video HTML5.
+                    </video>
+                </a>
+                <div class="overlay-text">Sessione Serale</div>
             </div>
 
-            <div class="row">
-                <div class="text-end col-12 py-1">
-                    <a href="index.html" class="text-footer">©2024 0885studio</a>
+            <div class="img home col-xl-7 col-lg-7 col-md-7 col-sm-12 position-relative">
+                <a href="fino.html" target="_blank">
+                    <img src="img/04_fino.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="Fino - 0885studio">
+                </a>
+                <div class="overlay-text">Fino</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-1">
+        <div class="row g-1">
+            <div class="img home col-xl-7 col-lg-7 col-md-7 col-sm-12 position-relative">
+                <a href="sancalisto.html" target="_blank">
+                    <img src="img/05_sancalisto.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="San Calisto - 0885studio">
+                </a>
+                <div class="overlay-text">San Calisto</div>
+            </div>
+
+            <div class="img home col-xl-5 col-lg-5 col-md-5 col-sm-12 position-relative">
+                <a href="lc23.html" target="_blank">
+                    <img src="img/06_lc23.jpg" class="img-fluid w-100 h-100 object-fit-cover" alt="LC23 - 0885studio">
+                </a>
+                <div class="overlay-text">LC23 Summer School</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-1">
+        <div class="row g-1">
+            <div class="img home col-xl-5 col-lg-5 col-md-5 col-sm-12 position-relative">
+                <a href="manne.html" target="_blank">
+                    <img src="img/07_upuglia.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Upuglia - 0885studio">
+                </a>
+                <div class="overlay-text">Mannè</div>
+            </div>
+
+            <div class="img home col-xl-7 col-lg-7 col-md-7 col-sm-12 position-relative">
+                <a href="daviscup.html" target="_blank">
+                    <img src="img/08_daviscup.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Davis Cup - 0885studio">
+                </a>
+                <div class="overlay-text">Davis Cup</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-1 pb-5">
+        <div class="row g-1">
+            <div class="img home col-xl-7 col-lg-7 col-md-7 col-sm-12 position-relative">
+                <a href="insightintogrids.html" target="_blank">
+                    <img src="img/09_insight.gif" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Insight - 0885studio">
+                </a>
+                <div class="overlay-text">Insight into grids</div>
+            </div>
+
+            <div class="img home col-xl-5 col-lg-5 col-md-5 col-sm-12 position-relative">
+                <a href="ildivo.html" target="_blank">
+                    <img src="img/10_ildivo.gif" class="img-fluid w-100 h-100 object-fit-cover"
+                        alt="Il Divo - 0885studio">
+                </a>
+                <div class="overlay-text">Il Divo</div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="footer pt-3">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- Sezione a sinistra con il testo GET IN TOUCH -->
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 py-1">
+                <div class="footer-title">Get in touch</br> with 0885</div>
+            </div>
+
+            <!-- Sezione con Progetti e About -->
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 py-1 d-flex justify-content-lg-end justify-content-md-end justify-content-sm-start flex-md-row flex-sm-row flex-column">
+                <a href="projects.html" class="footer-description d-block me-3">Projects</a>
+                <a href="about.html" class="footer-description d-block">About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid space">
+        <div class="row">
+            <!-- Testo del footer -->
+            <div class="col-md-4 col-sm-12 footer-description mb-2">
+                Hi, I love how design connects me with other beings. <br /> Thank you for making it this far! If you want
+                to share creative ideas, feel free to reach out. Let's create something great together!
+            </div>
+            <!-- Sezione con l'email -->
+            <div class="col-md-8 col-sm-12 d-flex align-items-end justify-content-end">
+                <div class="footer-title w-100 text-md-end text-sm-center">
+                    <a href="mailto:hello@0885studio.com" class="footer-title">hello@0885studio.com</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="container-fluid">
+        <div class="img position-relative">
+            <img src="img/footer.svg" class="img-fluid footer-image" alt="Footer Image">
+            <div class="copyright-text">
+                © 2024 0885studio
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
