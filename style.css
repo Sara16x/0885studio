@@ -81,12 +81,6 @@ a {
 }
 
 
-.navbar-collapse{
-    background-color: rgba(255, 254, 251, 0.8);
-    backdrop-filter: blur(0.1rem);
-    height: 100vh;
-}
-
 
 .nav-link {
     font-family: "Red Hat Display", sans-serif;
