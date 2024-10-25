@@ -14,7 +14,7 @@ a {
     max-height: 95vh;
 }
 
-.img.home {
+.img.home{
     height: 75vh;
 }
 
@@ -22,6 +22,9 @@ a {
     height: 90vh;
 }
 
+.svg{
+    height: 100rem;
+}
 .row.video {
     height: 90vh;
 }
@@ -72,11 +75,18 @@ a {
 }
 
 .navbar {
-    background-color: rgba(255, 254, 251, 0.5); /* Sfondo opaco bianco */
-    border-bottom: 0.1vh solid #ff0000; /* Bordo rosso in tutto il bordo */
+    background-color: rgba(255, 254, 251, 0.5);
     backdrop-filter: blur(0.1rem);
     height: 8vh;
 }
+
+
+.navbar-collapse{
+    background-color: rgba(255, 254, 251, 0.8);
+    backdrop-filter: blur(0.1rem);
+    height: 100vh;
+}
+
 
 .nav-link {
     font-family: "Red Hat Display", sans-serif;
@@ -105,18 +115,10 @@ body {
 }
 
 footer {
-    border-top: 0.1vh solid #ff0000;
-    background-color: #ff0000;
+    background-color: #e60404;
     margin: 0;
     padding: 0;
     position: relative;
-}
-
-.container-fluid.graphic {
-    height: 90vh;
-    position: absolute;
-    z-index: 2;
-    border-left: 1px solid #5B00DB;
 }
 
 .row.title {
@@ -270,6 +272,8 @@ p, .p {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+    
     h1, .h1 {
         font-size: 2.3rem;
     }
