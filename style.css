@@ -18,7 +18,7 @@ a {
     height: 75vh;
 }
 
-.img.start {
+.img-fluid.start {
     height: 90vh;
 }
 
@@ -29,12 +29,6 @@ a {
     height: 90vh;
 }
 
-/* Centratura immagini daviscup */
-.img.daviscup {
-    text-align: center;
-}
-
-/* Stile di base per le immagini e i video */
 .img.home img,
 .img.home video {
     position: relative;
@@ -96,9 +90,8 @@ a {
     border: 0;
 }
 
-/* Margine superiore per evitare che il contenuto venga coperto dalla navbar fissa */
 body {
-    padding-top: 70px; /* Spazio sotto la navbar */
+    padding-top: 70px;
 }
 
 footer {
@@ -233,7 +226,6 @@ p, .p {
         margin-bottom: 4vh;
     }
 
-    /* Font scaling */
     p, .p {
         font-size: 1rem;
     }
