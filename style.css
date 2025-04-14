@@ -215,6 +215,16 @@ p, .p {
     color: #141414;
 }
 
+.empiria .container-fluid,
+.empiria .row,
+.empiria .img,
+.empiria .img-fluid {
+  background-color: #191919;
+  padding-top: 0.5rem; /* Spazio sopra */
+  padding-bottom: 0.5rem;
+}
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     
