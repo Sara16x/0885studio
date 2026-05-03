@@ -1,0 +1,10 @@
+# robots.txt for 0885studio (0885archive.com / 0885studio.com)
+# https://www.0885archive.com/
+
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /.DS_Store
+
+# Sitemap
+Sitemap: https://www.0885archive.com/sitemap.xml

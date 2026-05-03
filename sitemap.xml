@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+
+  <url>
+    <loc>https://www.0885archive.com/</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.0885archive.com/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.0885archive.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.0885archive.com/"/>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/01_statiframmentari.jpg</image:loc>
+      <image:title>Selected works by 0885studio</image:title>
+    </image:image>
+  </url>
+
+  <!-- Digital Design Week & Digital Yacht Week intentionally excluded
+       while the projects are still drafts. Add their <url> entries back
+       here when the pages go live. -->
+
+  <url>
+    <loc>https://www.0885archive.com/about.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.0885archive.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.0885archive.com/about.html"/>
+    <image:image>
+      <image:loc>https://www.0885archive.com/about/profile_02.jpg</image:loc>
+      <image:title>Sara Cannone — 0885studio</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/statiframmentari.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/01_statiframmentari.jpg</image:loc>
+      <image:title>Stati Frammentari — Editorial design (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/damasu.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/02_damasu.jpg</image:loc>
+      <image:title>Damasu — Editorial design and coding (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/sessioneserale.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/sessioneserale/fuoricorso_total.png</image:loc>
+      <image:title>Sessione Serale — Visual design (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/empiria.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/empiria/empiria_kit.jpg</image:loc>
+      <image:title>Empiria — Interactive learning kit (2025)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/fino.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/04_fino.jpg</image:loc>
+      <image:title>Fino — Brand identity for olive oil (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/sancalisto.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/05_sancalisto.jpg</image:loc>
+      <image:title>San Calisto — Photography and visual design (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/lc23.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/06_lc23.jpg</image:loc>
+      <image:title>LC23 Summer School — Strategy and visual design (2024)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/manne.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/07_upuglia.jpg</image:loc>
+      <image:title>Mannè — Visual design with Upuglia (2023)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/daviscup.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/08_daviscup.jpg</image:loc>
+      <image:title>Davis Cup — Visual design (2022)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/insightintogrids.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/09_insight.gif</image:loc>
+      <image:title>Insight Into Grids — Motion graphics on Gestalt (2023)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/ildivo.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/img/10_ildivo.gif</image:loc>
+      <image:title>Il Divo — Video editing (2024)</image:title>
+    </image:image>
+  </url>
+
+</urlset>
