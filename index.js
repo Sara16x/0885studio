@@ -126,7 +126,8 @@
                 var speed = parseFloat(host.dataset.parallaxSpeed || '14'); // px range
                 var translateY = -progress * speed;
 
-                var media = host.querySelector(':scope > img, :scope > video');
+                // Homepage tiles wrap their <img> inside an <a>. Look anywhere inside the host.
+                var media = host.querySelector('img, video');
                 if (media) {
                     media.style.transform = 'scale(1.08) translate3d(0, ' + translateY.toFixed(1) + 'px, 0)';
                 }
