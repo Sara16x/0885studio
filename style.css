@@ -105,14 +105,25 @@ img, video { max-width: 100%; height: auto; }
     100% { transform: rotate(0); }
 }
 .footer-ring {
+    /* legacy: kept harmless so the inline span stays inert if any page still has it */
     display: inline-block;
-    transform-origin: 50% 85%;
+}
+/* Animate the navbar 0885 logo (top-left) */
+.navbar-brand .logo-ring {
+    display: inline-block;
+    transform-origin: 50% 80%;
     animation: ring0885 6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
     backface-visibility: hidden;
-    perspective: 1000px;
+    will-change: transform;
 }
-.footer-ring:hover {
-    animation-duration: 1.5s;
+.navbar-brand:hover .logo-ring { animation-duration: 1.5s; }
+
+/* Animate the giant violet 0885 SVG in the footer */
+.footer-image-anim {
+    transform-origin: 50% 80%;
+    animation: ring0885 7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 /* Reduced-motion overrides for the new effects */
@@ -127,7 +138,9 @@ img, video { max-width: 100%; height: auto; }
     .parallax-host > video {
         transform: none !important;
     }
-    .footer-ring { animation: none !important; }
+    .footer-ring,
+    .navbar-brand .logo-ring,
+    .footer-image-anim { animation: none !important; }
 }
 
 /* ---------------------------------------------------------
@@ -359,6 +372,9 @@ h1, .h1 {
     bottom: 1vh;
     color: #fffefb;
     font-size: 0.9rem;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 h2 {
@@ -516,5 +532,128 @@ p, .p {
 
     p, .p {
         font-size: 1.4rem;
+    }
+}
+
+/* ---------------------------------------------------------
+   Mobile + tablet full-screen menu
+   Triggered by the existing Bootstrap navbar-toggler.
+   On screens < 992px: opening the menu reveals a centered
+   vertical list of links with the 0885 logo at the bottom.
+--------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    /* Burger button morphs into an X when the menu is open */
+    .navbar-toggler {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        z-index: 1100;
+        background: transparent;
+    }
+    .navbar-toggler .navbar-toggler-icon {
+        background-image: none;
+        position: relative;
+        width: 28px;
+        height: 18px;
+        display: inline-block;
+    }
+    .navbar-toggler .navbar-toggler-icon::before,
+    .navbar-toggler .navbar-toggler-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #141414;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+    }
+    .navbar-toggler .navbar-toggler-icon::before { top: 4px; }
+    .navbar-toggler .navbar-toggler-icon::after  { bottom: 4px; }
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        top: 8px; transform: rotate(45deg);
+    }
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        bottom: 8px; transform: rotate(-45deg);
+    }
+
+    /* Full-screen overlay panel */
+    .navbar .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        height: 100dvh;
+        background-color: #fffefb;
+        z-index: 1090;
+        padding: 12vh 2rem 6vh;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+    }
+    .navbar .navbar-collapse.show,
+    .navbar .navbar-collapse.collapsing {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.35s ease, visibility 0s linear 0s;
+    }
+
+    /* Stack and center the two nav lists */
+    .navbar .navbar-collapse .navbar-nav {
+        margin: 0 !important;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
+        width: 100%;
+    }
+    .navbar .navbar-collapse .navbar-nav + .navbar-nav {
+        margin-top: 0.6rem !important;
+    }
+    .navbar .navbar-collapse .nav-item { width: 100%; }
+    .navbar .navbar-collapse .nav-link {
+        font-family: "Red Hat Display", sans-serif;
+        font-size: 2.6rem;
+        font-weight: 800;
+        line-height: 1.05;
+        color: #141414;
+        padding: 0.35rem 0;
+        text-transform: none;
+        letter-spacing: -0.01em;
+    }
+    .navbar .navbar-collapse .nav-link.active,
+    .navbar .navbar-collapse .nav-link:hover {
+        color: #5B00DB !important;
+    }
+
+    /* 0885 logo pinned at the bottom of the open menu */
+    .navbar .navbar-collapse::after {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 80px;
+        background: url('img/logo.svg') no-repeat center;
+        background-size: contain;
+        margin-top: auto;
+        opacity: 0.95;
+    }
+
+    /* Lock background scroll while the menu is open */
+    body:has(.navbar-collapse.show) {
+        overflow: hidden;
+    }
+}
+
+/* Slightly smaller type on phone-only widths */
+@media (max-width: 575.98px) {
+    .navbar .navbar-collapse .nav-link {
+        font-size: 2.1rem;
     }
 }
