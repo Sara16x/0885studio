@@ -49,10 +49,10 @@ img, video { max-width: 100%; height: auto; }
 --------------------------------------------------------- */
 [data-reveal] {
     opacity: 0;
-    transform: translate3d(0, 48px, 0);
+    transform: translate3d(0, 80px, 0);
     transition:
-        opacity 1s cubic-bezier(0.22, 0.6, 0.36, 1),
-        transform 1s cubic-bezier(0.22, 0.6, 0.36, 1);
+        opacity 1.4s cubic-bezier(0.22, 0.6, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 0.6, 0.36, 1);
     will-change: opacity, transform;
 }
 [data-reveal].is-revealed {
@@ -62,16 +62,16 @@ img, video { max-width: 100%; height: auto; }
 /* Stagger inside a row: each child reveals slightly after the previous one */
 [data-reveal-stagger] > * {
     opacity: 0;
-    transform: translate3d(0, 48px, 0);
+    transform: translate3d(0, 80px, 0);
     transition:
-        opacity 1s cubic-bezier(0.22, 0.6, 0.36, 1),
-        transform 1s cubic-bezier(0.22, 0.6, 0.36, 1);
+        opacity 1.4s cubic-bezier(0.22, 0.6, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 0.6, 0.36, 1);
     will-change: opacity, transform;
 }
-[data-reveal-stagger].is-revealed > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translate3d(0,0,0); }
-[data-reveal-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translate3d(0,0,0); }
-[data-reveal-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.24s; opacity: 1; transform: translate3d(0,0,0); }
-[data-reveal-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translate3d(0,0,0); }
+[data-reveal-stagger].is-revealed > *:nth-child(1) { transition-delay: 0s;    opacity: 1; transform: translate3d(0,0,0); }
+[data-reveal-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.18s; opacity: 1; transform: translate3d(0,0,0); }
+[data-reveal-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.36s; opacity: 1; transform: translate3d(0,0,0); }
+[data-reveal-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.54s; opacity: 1; transform: translate3d(0,0,0); }
 
 /* ---------------------------------------------------------
    Interactive: parallax inner image
@@ -118,10 +118,23 @@ img, video { max-width: 100%; height: auto; }
 }
 .navbar-brand:hover .logo-ring { animation-duration: 1.5s; }
 
-/* Animate the giant violet 0885 SVG in the footer */
+/* Animate the giant violet 0885 SVG in the footer
+   - Uses softer rotations so the SVG never gets clipped at the page edges
+   - Sits at scale(0.96) so the corners have buffer space when rotated */
+@keyframes ring0885-soft {
+    0%   { transform: scale(0.96) rotate(0); }
+    3%   { transform: scale(0.96) rotate(-6deg); }
+    6%   { transform: scale(0.96) rotate(5deg); }
+    9%   { transform: scale(0.96) rotate(-4deg); }
+    12%  { transform: scale(0.96) rotate(3deg); }
+    15%  { transform: scale(0.96) rotate(-2deg); }
+    18%  { transform: scale(0.96) rotate(0); }
+    100% { transform: scale(0.96) rotate(0); }
+}
+.footer .img.position-relative { overflow: visible !important; }
 .footer-image-anim {
-    transform-origin: 50% 80%;
-    animation: ring0885 7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    transform-origin: 50% 50%;
+    animation: ring0885-soft 7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
     backface-visibility: hidden;
     will-change: transform;
 }
@@ -576,7 +589,13 @@ p, .p {
         bottom: 8px; transform: rotate(-45deg);
     }
 
-    /* Full-screen overlay panel */
+    /* Burger lines turn white when menu is open (better contrast on red) */
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        background: #fffefb;
+    }
+
+    /* Full-screen RED overlay panel */
     .navbar .navbar-collapse {
         position: fixed;
         top: 0;
@@ -584,17 +603,18 @@ p, .p {
         right: 0;
         height: 100vh;
         height: 100dvh;
-        background-color: #fffefb;
+        background-color: #e60404;
         z-index: 1090;
-        padding: 12vh 2rem 6vh;
+        padding: 14vh 2rem 0;
         display: flex !important;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
         transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+        overflow: hidden;
     }
     .navbar .navbar-collapse.show,
     .navbar .navbar-collapse.collapsing {
@@ -604,18 +624,18 @@ p, .p {
         transition: opacity 0.35s ease, visibility 0s linear 0s;
     }
 
-    /* Stack and center the two nav lists */
+    /* Stack and center the two nav lists, white text */
     .navbar .navbar-collapse .navbar-nav {
         margin: 0 !important;
         padding: 0;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 0.4rem;
+        gap: 0.3rem;
         width: 100%;
     }
     .navbar .navbar-collapse .navbar-nav + .navbar-nav {
-        margin-top: 0.6rem !important;
+        margin-top: 0.4rem !important;
     }
     .navbar .navbar-collapse .nav-item { width: 100%; }
     .navbar .navbar-collapse .nav-link {
@@ -623,32 +643,44 @@ p, .p {
         font-size: 2.6rem;
         font-weight: 800;
         line-height: 1.05;
-        color: #141414;
+        color: #fffefb !important;
         padding: 0.35rem 0;
         text-transform: none;
         letter-spacing: -0.01em;
+        transition: color 0.2s ease;
     }
     .navbar .navbar-collapse .nav-link.active,
-    .navbar .navbar-collapse .nav-link:hover {
+    .navbar .navbar-collapse .nav-link:hover,
+    .navbar .navbar-collapse .nav-link:focus {
         color: #5B00DB !important;
     }
 
-    /* 0885 logo pinned at the bottom of the open menu */
+    /* Big violet 0885 SVG pinned at the bottom of the open menu, animating */
     .navbar .navbar-collapse::after {
         content: "";
         display: block;
-        width: 130px;
-        height: 80px;
-        background: url('img/logo.svg') no-repeat center;
+        width: 120vw;
+        max-width: 1200px;
+        aspect-ratio: 4 / 1;
+        background: url('img/footer.svg') no-repeat center bottom;
         background-size: contain;
-        margin-top: auto;
-        opacity: 0.95;
+        margin: auto -10vw 0;
+        transform-origin: 50% 50%;
+        animation: ring0885-soft 7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+        will-change: transform;
+        flex-shrink: 0;
+        pointer-events: none;
     }
 
     /* Lock background scroll while the menu is open */
     body:has(.navbar-collapse.show) {
         overflow: hidden;
     }
+}
+
+/* Reduced-motion: still red bg, just no ring */
+@media (max-width: 991.98px) and (prefers-reduced-motion: reduce) {
+    .navbar .navbar-collapse::after { animation: none !important; }
 }
 
 /* Slightly smaller type on phone-only widths */

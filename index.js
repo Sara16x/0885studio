@@ -83,10 +83,14 @@
             threshold: 0.06
         });
 
-        Array.prototype.forEach.call(
-            document.querySelectorAll('[data-reveal], [data-reveal-stagger]'),
-            function (el) { observer.observe(el); }
-        );
+        // Small initial delay so the cascade is actually visible on items
+        // that are already in the viewport when the page first loads.
+        setTimeout(function () {
+            Array.prototype.forEach.call(
+                document.querySelectorAll('[data-reveal], [data-reveal-stagger]'),
+                function (el) { observer.observe(el); }
+            );
+        }, 250);
     }
 
     function setupParallax() {
