@@ -119,24 +119,45 @@ img, video { max-width: 100%; height: auto; }
 .navbar-brand:hover .logo-ring { animation-duration: 1.5s; }
 
 /* Animate the giant violet 0885 SVG in the footer
-   - Uses softer rotations so the SVG never gets clipped at the page edges
-   - Sits at scale(0.96) so the corners have buffer space when rotated */
+   - Fast, frantic phone-vibration shake (translate + tiny rotation)
+   - Sits at scale(0.96) so the corners have buffer space when shaking */
 @keyframes ring0885-soft {
-    0%   { transform: scale(0.96) rotate(0); }
-    3%   { transform: scale(0.96) rotate(-6deg); }
-    6%   { transform: scale(0.96) rotate(5deg); }
-    9%   { transform: scale(0.96) rotate(-4deg); }
-    12%  { transform: scale(0.96) rotate(3deg); }
-    15%  { transform: scale(0.96) rotate(-2deg); }
-    18%  { transform: scale(0.96) rotate(0); }
-    100% { transform: scale(0.96) rotate(0); }
+    0%   { transform: scale(0.96) translate(0, 0) rotate(0); }
+    1%   { transform: scale(0.96) translate(-2px, 1px) rotate(-3deg); }
+    2%   { transform: scale(0.96) translate(2px, -1px) rotate(3deg); }
+    3%   { transform: scale(0.96) translate(-2px, 0) rotate(-2deg); }
+    4%   { transform: scale(0.96) translate(2px, 1px) rotate(2deg); }
+    5%   { transform: scale(0.96) translate(-1px, -1px) rotate(-3deg); }
+    6%   { transform: scale(0.96) translate(2px, 0) rotate(3deg); }
+    7%   { transform: scale(0.96) translate(-2px, 1px) rotate(-2deg); }
+    8%   { transform: scale(0.96) translate(1px, -1px) rotate(2deg); }
+    9%   { transform: scale(0.96) translate(-1px, 0) rotate(-1deg); }
+    10%  { transform: scale(0.96) translate(0, 0) rotate(0); }
+    100% { transform: scale(0.96) translate(0, 0) rotate(0); }
 }
 .footer .img.position-relative { overflow: visible !important; }
 .footer-image-anim {
     transform-origin: 50% 50%;
-    animation: ring0885-soft 7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    animation: ring0885-soft 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
     backface-visibility: hidden;
     will-change: transform;
+}
+
+/* Footer SVG sits flush — no red seam above or below */
+.footer .img.position-relative { line-height: 0; font-size: 0; }
+.footer-image {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: bottom;
+}
+
+/* Match the tablet (md) footer layout to desktop */
+@media (min-width: 768px) {
+    .footer .col-md-7 { flex: 0 0 auto; width: 66.66666667%; }
+    .footer .col-md-5 { flex: 0 0 auto; width: 33.33333333%; }
 }
 
 /* Reduced-motion overrides for the new effects */
