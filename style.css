@@ -42,6 +42,36 @@ button:focus-visible,
 /* Image rendering hints */
 img, video { max-width: 100%; height: auto; }
 
+/* Hide every native control overlay on videos that should autoplay silently.
+   Safari/iOS show a "start playback" button until autoplay actually fires,
+   so we hide it aggressively in addition to the JS force-play in index.js. */
+video:not([controls]) {
+    pointer-events: none;
+}
+video:not([controls])::-webkit-media-controls,
+video:not([controls])::-webkit-media-controls-enclosure,
+video:not([controls])::-webkit-media-controls-panel,
+video:not([controls])::-webkit-media-controls-panel-container,
+video:not([controls])::-webkit-media-controls-overlay-enclosure,
+video:not([controls])::-webkit-media-controls-overlay-play-button,
+video:not([controls])::-webkit-media-controls-start-playback-button,
+video:not([controls])::-webkit-media-controls-play-button,
+video:not([controls])::-webkit-media-controls-timeline,
+video:not([controls])::-webkit-media-controls-current-time-display,
+video:not([controls])::-webkit-media-controls-time-remaining-display,
+video:not([controls])::-webkit-media-controls-mute-button,
+video:not([controls])::-webkit-media-controls-toggle-closed-captions-button,
+video:not([controls])::-webkit-media-controls-volume-slider,
+video:not([controls])::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+video::-internal-media-controls-overlay-cast-button { display: none !important; }
+
 /* ---------------------------------------------------------
    Interactive: scroll reveal
    Elements with data-reveal start hidden + offset and ease in
@@ -181,17 +211,67 @@ img, video { max-width: 100%; height: auto; }
    Featured works (About page) — list of all projects with
    hover-enlarge thumbnails on desktop.
 --------------------------------------------------------- */
+.featured-works {
+    overflow: visible;
+}
 .featured-works .featured-label {
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #a3a3a3;
-    border-top: 1px solid #5B00DB;
-    padding-top: 0.75rem;
+    color: #141414;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-top: none;
+    padding-top: 0;
 }
 .featured-grid {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+/* Horizontal scrollable gallery */
+.featured-gallery-scroll {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    align-items: flex-start;
+}
+/* Hide scrollbar but allow scrolling */
+.featured-gallery-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.featured-gallery-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.featured-gallery-scroll::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 10px;
+}
+.featured-gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: #5B00DB;
+}
+/* Firefox scrollbar */
+.featured-gallery-scroll {
+    scrollbar-color: #a3a3a3 #f1f1f1;
+    scrollbar-width: thin;
+}
+/* Items in scrollable gallery have fixed min-width */
+.featured-gallery-scroll .featured-item {
+    flex: 0 0 auto;
+    width: 200px;
+}
+/* Desktop: 4 items visible */
+@media (min-width: 992px) {
+    .featured-gallery-scroll .featured-item {
+        width: 300px;
+    }
 }
 /* 5 across on XL — Bootstrap doesn't ship col-xl-2-4 */
 @media (min-width: 1200px) {
@@ -202,6 +282,7 @@ img, video { max-width: 100%; height: auto; }
 }
 .featured-item {
     position: relative;
+    z-index: 1;
 }
 .featured-link {
     display: block;
@@ -212,7 +293,7 @@ img, video { max-width: 100%; height: auto; }
     display: block;
     font-size: 0.8rem;
     font-weight: 500;
-    color: #a3a3a3;
+    color: #e60404;
     margin-bottom: 0.4rem;
 }
 .featured-thumb {
@@ -272,6 +353,16 @@ img, video { max-width: 100%; height: auto; }
 
 .img {
     max-height: 95vh;
+}
+
+/* Opt-in: keep a video at its native 16:9 aspect, no cropping (mobile + desktop). */
+.video-native,
+.video-native video {
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    display: block;
 }
 
 .img.home{

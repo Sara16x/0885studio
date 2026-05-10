@@ -154,14 +154,57 @@
         update();
     }
 
+    // ---------------------------------------------------------------------
+    // Force-play silent autoplay videos.
+    // Some browsers (Safari/iOS especially) show a play-button overlay on
+    // <video autoplay> until playback actually starts. We programmatically
+    // ensure muted=true and call play() so the overlay never appears.
+    // Videos with the `controls` attribute (the teaser) are skipped.
+    // ---------------------------------------------------------------------
+    function setupVideoAutoplay() {
+        var videos = document.querySelectorAll('video[autoplay]');
+        Array.prototype.forEach.call(videos, function (v) {
+            if (v.hasAttribute('controls')) return;
+            try {
+                v.muted = true;
+                v.defaultMuted = true;
+                v.setAttribute('muted', '');
+                v.setAttribute('playsinline', '');
+                v.removeAttribute('controls');
+                v.controls = false;
+                var p = v.play();
+                if (p && typeof p.catch === 'function') {
+                    p.catch(function () {
+                        // Retry once on the next user interaction
+                        var retry = function () {
+                            v.muted = true;
+                            v.play().catch(function () {});
+                            window.removeEventListener('touchstart', retry);
+                            window.removeEventListener('click', retry);
+                            window.removeEventListener('scroll', retry);
+                        };
+                        window.addEventListener('touchstart', retry, { passive: true, once: true });
+                        window.addEventListener('click', retry, { once: true });
+                        window.addEventListener('scroll', retry, { passive: true, once: true });
+                    });
+                }
+            } catch (e) { /* no-op */ }
+        });
+    }
+
     // Kick off after layout is settled.
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             setupReveal();
             setupParallax();
+            setupVideoAutoplay();
         });
     } else {
         setupReveal();
         setupParallax();
+        setupVideoAutoplay();
     }
+    // Re-trigger after full window load too — some browsers only allow play()
+    // after media metadata + first frame are decoded.
+    window.addEventListener('load', setupVideoAutoplay);
 })();
