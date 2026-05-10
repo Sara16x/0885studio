@@ -17,9 +17,27 @@
     </image:image>
   </url>
 
-  <!-- Digital Design Week & Digital Yacht Week intentionally excluded
-       while the projects are still drafts. Add their <url> entries back
-       here when the pages go live. -->
+  <url>
+    <loc>https://www.0885archive.com/digitaldesignweek.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/digitaldesignweek/cover.svg</image:loc>
+      <image:title>Digital Design Week — Visual design (2025)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.0885archive.com/digitalyachtweek.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.0885archive.com/digitalyachtweek/cover.svg</image:loc>
+      <image:title>Digital Yacht Week — Visual design (2025)</image:title>
+    </image:image>
+  </url>
 
   <url>
     <loc>https://www.0885archive.com/about.html</loc>
