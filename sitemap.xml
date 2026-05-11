@@ -12,7 +12,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.0885archive.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.0885archive.com/"/>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/01_statiframmentari.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/01_statiframmentari.webp</image:loc>
       <image:title>Selected works by 0885studio</image:title>
     </image:image>
   </url>
@@ -58,7 +58,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/01_statiframmentari.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/01_statiframmentari.webp</image:loc>
       <image:title>Stati Frammentari — Editorial design (2024)</image:title>
     </image:image>
   </url>
@@ -69,7 +69,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/02_damasu.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/02_damasu.webp</image:loc>
       <image:title>Damasu — Editorial design and coding (2024)</image:title>
     </image:image>
   </url>
@@ -113,7 +113,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/05_sancalisto.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/05_sancalisto.webp</image:loc>
       <image:title>San Calisto — Photography and visual design (2024)</image:title>
     </image:image>
   </url>
@@ -124,7 +124,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/06_lc23.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/06_lc23.webp</image:loc>
       <image:title>LC23 Summer School — Strategy and visual design (2024)</image:title>
     </image:image>
   </url>
@@ -146,7 +146,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://www.0885archive.com/img/08_daviscup.jpg</image:loc>
+      <image:loc>https://www.0885archive.com/img/08_daviscup.webp</image:loc>
       <image:title>Davis Cup — Visual design (2022)</image:title>
     </image:image>
   </url>
