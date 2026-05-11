@@ -748,6 +748,19 @@ p, .p {
         transition: opacity 0.35s ease, visibility 0s linear 0s;
     }
 
+    /* Bootstrap's collapse animation transitions inline `height` from 0 to auto,
+       which makes the red overlay grow from half-height to full. Force the panel
+       to its final size for the entire animation, and disable the height
+       transition so only our opacity fade is visible. */
+    .navbar .navbar-collapse.collapsing {
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 100vh;
+        min-height: 100dvh;
+        transition: opacity 0.35s ease, visibility 0s linear 0s !important;
+        overflow: hidden;
+    }
+
     /* Stack and center the two nav lists, white text */
     .navbar .navbar-collapse .navbar-nav {
         margin: 0 !important;
