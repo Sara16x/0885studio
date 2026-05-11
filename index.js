@@ -155,40 +155,75 @@
     }
 
     // ---------------------------------------------------------------------
-    // Force-play silent autoplay videos.
-    // Some browsers (Safari/iOS especially) show a play-button overlay on
-    // <video autoplay> until playback actually starts. We programmatically
-    // ensure muted=true and call play() so the overlay never appears.
-    // Videos with the `controls` attribute (the teaser) are skipped.
+    // Smart video loader.
+    // - Force-plays muted/autoplay videos to suppress the iOS/Safari play
+    //   overlay.
+    // - Lazily loads + plays videos only when they enter the viewport, and
+    //   pauses them when they leave, so off-screen media doesn't consume
+    //   bandwidth, CPU, or battery. This is the biggest perf win on the
+    //   pages with many embedded videos (e.g. Digital Design Week).
+    // - Videos with the `controls` attribute (the teaser) are not forced to
+    //   play but still benefit from lazy preload.
     // ---------------------------------------------------------------------
+    function attemptPlay(v) {
+        if (v.hasAttribute('controls')) return;
+        try {
+            v.muted = true;
+            v.defaultMuted = true;
+            v.setAttribute('muted', '');
+            v.setAttribute('playsinline', '');
+            var p = v.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(function () {
+                    var retry = function () {
+                        v.muted = true;
+                        v.play().catch(function () {});
+                        window.removeEventListener('touchstart', retry);
+                        window.removeEventListener('click', retry);
+                        window.removeEventListener('scroll', retry);
+                    };
+                    window.addEventListener('touchstart', retry, { passive: true, once: true });
+                    window.addEventListener('click', retry, { once: true });
+                    window.addEventListener('scroll', retry, { passive: true, once: true });
+                });
+            }
+        } catch (e) { /* no-op */ }
+    }
+
     function setupVideoAutoplay() {
-        var videos = document.querySelectorAll('video[autoplay]');
-        Array.prototype.forEach.call(videos, function (v) {
-            if (v.hasAttribute('controls')) return;
-            try {
-                v.muted = true;
-                v.defaultMuted = true;
-                v.setAttribute('muted', '');
-                v.setAttribute('playsinline', '');
-                v.removeAttribute('controls');
-                v.controls = false;
-                var p = v.play();
-                if (p && typeof p.catch === 'function') {
-                    p.catch(function () {
-                        // Retry once on the next user interaction
-                        var retry = function () {
-                            v.muted = true;
-                            v.play().catch(function () {});
-                            window.removeEventListener('touchstart', retry);
-                            window.removeEventListener('click', retry);
-                            window.removeEventListener('scroll', retry);
-                        };
-                        window.addEventListener('touchstart', retry, { passive: true, once: true });
-                        window.addEventListener('click', retry, { once: true });
-                        window.addEventListener('scroll', retry, { passive: true, once: true });
-                    });
+        var videos = document.querySelectorAll('video');
+        if (!videos.length) return;
+
+        // Without IntersectionObserver, just play everything as before.
+        if (!('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(videos, function (v) {
+                if (v.hasAttribute('autoplay')) attemptPlay(v);
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var v = entry.target;
+                if (entry.isIntersecting) {
+                    // Promote preload + start playback when the video is
+                    // about to enter the viewport.
+                    if (v.preload === 'none') {
+                        v.preload = 'auto';
+                        try { v.load(); } catch (e) {}
+                    }
+                    if (v.hasAttribute('autoplay')) attemptPlay(v);
+                } else {
+                    // Pause off-screen autoplay videos (skip teaser/controls).
+                    if (!v.paused && !v.hasAttribute('controls')) {
+                        try { v.pause(); } catch (e) {}
+                    }
                 }
-            } catch (e) { /* no-op */ }
+            });
+        }, { rootMargin: '300px 0px', threshold: 0.01 });
+
+        Array.prototype.forEach.call(videos, function (v) {
+            observer.observe(v);
         });
     }
 

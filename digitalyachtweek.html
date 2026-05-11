@@ -39,7 +39,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=9">
 
     <link rel="icon" type="image/svg+xml" href="img/backgroundlogo.svg">
     <link rel="apple-touch-icon" href="img/backgroundlogo.svg">
@@ -115,10 +115,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="img-fluid start col-12">
-                        <img src="digitalyachtweek/01.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — opening image"
-                            loading="eager" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
+                        <img src="digitalyachtweek/cover.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — cover"
+                            loading="eager" fetchpriority="high" decoding="async">
                     </div>
                 </div>
             </div>
@@ -130,102 +129,136 @@
                         <h2 id="dyw-goal" class="h1">The goal</h2>
                     </div>
                     <div class="text col-xl-6 col-lg-6 col-md-6 col-sm-12 pb-4">
-                        <p>Build an institutional, unmistakably nautical language that the user reads at a glance. </p>
+                        <p>Position the exhibition within the institutional codes of yachting, building a language precise enough to be recognized at a glance and dense enough to reward a closer read.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Gallery 01 — two images side by side -->
+            <!-- DYW05 + DYW04 — videos side by side on desktop/tablet only -->
             <div class="container-fluid">
-                <div class="row g-1 py-1">
-                    <div class="img col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <img src="digitalyachtweek/02.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 02"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
+                <div class="row g-1 py-1 dyw-videos-side">
+                    <div class="img video-native col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <video class="img-fluid w-100 d-block" autoplay loop muted playsinline preload="auto">
+                            <source src="digitalyachtweek/dyw05.mp4" type="video/mp4">
+                        </video>
                     </div>
-                    <div class="img col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <img src="digitalyachtweek/03.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 03"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single full-width -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="img-fluid col-12">
-                        <img src="digitalyachtweek/04.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 04"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
+                    <div class="img video-native col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <video class="img-fluid w-100 d-block" autoplay loop muted playsinline preload="auto">
+                            <source src="digitalyachtweek/dyw04.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
 
                         <!-- The system -->
-            <section class="container-fluid pt-4 pb-2" aria-labelledby="ddw-goal">
+            <section class="container-fluid pt-4 pb-2" aria-labelledby="dyw-system">
                 <div class="row pt-4 pt-lg-4 pt-sm-1">
                     <div class="text col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <h2 id="ddw-goal" class="h1">The goal</h2>
+                        <h2 id="dyw-system" class="h1">The system</h2>
                     </div>
                     <div class="text col-xl-6 col-lg-6 col-md-6 col-sm-12 pb-4">
-                        <p> The palette is lifted directly from naval displays, working as a functional set rather than a decorative one. ChartBlue sets the deep field, GridGrey carries the structure, Offwhite Nautical defines the operating surface, and Signal is reserved for active states. The grid quotes the quadrant logic of nautical charts and carries every layout. Image treatment is hyperrealistic by design, calibrated to place the viewer onboard rather than at a distance. The photographic narrative is anchored to three moments of the day, sunrise, midday, and sunset, the hours when a yacht is best lived and best seen, and the same hours that govern both the render schedule and the publishing rhythm. </p>
+                        <p> The palette is lifted directly from naval displays, working as a functional set rather than a decorative one. ChartBlue sets the deep field, GridGrey carries the structure, Offwhite Nautical defines the operating surface, and Signal is reserved for active states. The grid quotes the quadrant logic of nautical charts and carries every layout. Image treatment is hyperrealistic by design, calibrated to place the viewer onboard rather than at a distance.  </p>
                         </div>
                 </div>
             </section>  
 
-            <!-- Gallery 02 — 5/7 split -->
-            <div class="container-fluid py-1">
-                <div class="row g-1">
-                    <div class="img col-xl-5 col-lg-5 col-md-5 col-sm-12 d-flex align-items-center justify-content-center">
-                        <img src="digitalyachtweek/05.jpg" class="img-fluid h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 05"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
-                    </div>
-                    <div class="img col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                        <img src="digitalyachtweek/06.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 06"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single full-width -->
-            <div class="container-fluid py-1">
-                <div class="row">
-                    <div class="img-fluid col-12">
-                        <img src="digitalyachtweek/07.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 07"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gallery 03 — 6/6 split -->
+            <!-- Gallery — DYW01 + DYW02 + DYW03 (3 columns) -->
             <div class="container-fluid">
-                <div class="row g-1">
-                    <div class="img col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
-                        <img src="digitalyachtweek/08.jpg" class="img-fluid h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 08"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
+                <div class="row g-1 py-1">
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw01.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 01"
+                            loading="lazy" decoding="async">
                     </div>
-                    <div class="img col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <img src="digitalyachtweek/09.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                            alt="Digital Yacht Week — image 09"
-                            loading="lazy" decoding="async"
-                            onerror="this.onerror=null;this.src='digitalyachtweek/cover.svg';">
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw02.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 02"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw03.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 03"
+                            loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
 
-            <nav class="container-fluid pt-3 pb-5" aria-label="Project navigation">
+            <!-- New section with title and description -->
+            <section class="container-fluid pt-5 pb-2" aria-labelledby="dyw-new">
+                <div class="row pt-4 pt-lg-4 pt-sm-1">
+                    <div class="text col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <h2 id="dyw-new" class="h1">Photographic aprroach</h2>
+                    </div>
+                    <div class="text col-xl-6 col-lg-6 col-md-6 col-sm-12 pb-4">
+                        <p>The photographic narrative is anchored to three moments of the day, sunrise, midday, and sunset, the hours when a yacht is best lived and best seen, and the same hours that govern both the render schedule and the publishing rhythm.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery — DYW06 + DYW07 + DYW08 (3 columns) -->
+            <div class="container-fluid">
+                <div class="row g-1 py-1">
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw06.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 06"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw07.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 07"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw08.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 08"
+                            loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery — DYW09 + DYW10 + DYW11 (3 columns) -->
+            <div class="container-fluid">
+                <div class="row g-1 py-1">
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw09.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 09"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw10.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 10"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw11.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 11"
+                            loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery — DYW12 + DYW13 + DYW14 (3 columns) -->
+            <div class="container-fluid">
+                <div class="row g-1 py-1">
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw12.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 12"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw13.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 13"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="img col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <img src="digitalyachtweek/dyw14.webp" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Digital Yacht Week — image 14"
+                            loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+
+            <nav class="container-fluid pt-5 pb-5 mt-5" aria-label="Project navigation">
                 <div class="row">
                     <div class="col-6 d-flex justify-content-start">
                         <a href="digitaldesignweek.html" class="h4" rel="prev">← Prev Project</a>
@@ -279,7 +312,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous" defer></script>
-    <script src="index.js?v=5" defer></script>
+    <script src="index.js?v=9" defer></script>
 </body>
 
 </html>

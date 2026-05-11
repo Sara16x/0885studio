@@ -364,6 +364,18 @@ video::-internal-media-controls-overlay-cast-button { display: none !important; 
     object-fit: contain !important;
     display: block;
 }
+/* Prevent wrapping for side-by-side videos on desktop */
+@media (min-width: 992px) {
+    .ddw-videos {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    .ddw-videos .col-xl-4 {
+        flex: 0 0 auto !important;
+        width: 33.3333% !important;
+        min-width: 0 !important;
+    }
+}
 
 .img.home{
     height: 75vh;
@@ -799,5 +811,17 @@ p, .p {
 @media (max-width: 575.98px) {
     .navbar .navbar-collapse .nav-link {
         font-size: 2.1rem;
+    }
+}
+
+/* Side-by-side videos on desktop/tablet only */
+@media (min-width: 768px) {
+    .dyw-videos-side {
+        flex-wrap: nowrap !important;
+    }
+    .dyw-videos-side .col-xl-4,
+    .dyw-videos-side .col-lg-4,
+    .dyw-videos-side .col-md-4 {
+        flex: 0 0 33.333% !important;
     }
 }
